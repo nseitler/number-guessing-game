@@ -35,7 +35,7 @@ def start_game():
 		try:
 			guess = int(guess)
 			if guess < 1 or guess > 100:
-				print("Your guess must be a number between 1 and 100.")
+				print("Your guess must be a number between 1 and 100.") 
 		except ValueError as err:
 			print("Please choose a number.")
 		else:
@@ -47,6 +47,7 @@ def start_game():
 				print("You guessed the right number!")
 				print("It took {} attempts.".format(guesses))
 				print_stats(scores)
+
 #	Prompt to play again
 				continue_playing = input("Do you want to continue playing? Y/N   ")
 
