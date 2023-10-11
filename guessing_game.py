@@ -38,10 +38,15 @@ def start_game():
 			print("Your guess must be a number between 1 and 100.")
 		except ValueError as err:
 			print("please choose a number.")
+		else:
+			guesses += 1
 
-		if guess == answer:
-			print("You guessed the right number!")
-			break
+			if guess == answer:
+				scores.append(guesses)
+				print("You guessed the right number!")
+				print("It took {} attempts.".format(guesses))
+				print_stats(scores)
+				
 #     a. If the guess is greater than the solution, display to the player "It's lower".
 		elif guess < answer:
 			print("It's low.")
