@@ -54,7 +54,7 @@ def start_game():
 				guesses += 1
 				scores.append(guesses)
 				print("You guessed the right number!")
-				print("It took {} attempts.".format(guesses))
+				print(f"It took {guesses} attempts.")
 				print_stats(scores)
 
 #	Prompt to play again
