@@ -36,13 +36,22 @@ def start_game():
 			guess = int(guess)
 			if guess < 1 or guess > 100:
 				print("Your guess must be a number between 1 and 100.") 
+			# If the guess is greater than the solution, display to the player "It's lower".
+			elif guess > answer:
+				print("It's lower.")
+				guesses += 1
+			# If the guess is less than the solution, display to the player "It's higher".
+			elif guess < answer:
+				print("It's higher.")
+				guesses += 1
 		except ValueError as err:
 			print("Please choose a number.")
 		else:
-			guesses += 1
+			guesses += 0
 
 #   Once the guess is correct, stop looping, inform the user they "Got it" and store the number of guesses it took in a list.
 			if guess == answer:
+				guesses += 1
 				scores.append(guesses)
 				print("You guessed the right number!")
 				print("It took {} attempts.".format(guesses))
@@ -58,15 +67,5 @@ def start_game():
 				else:
 					print("Thank you for playing! Goodbye!")
 					break
-				
-#	If the guess is greater than the solution, display to the player "It's lower".
-			elif guess > answer:
-				print("It's high.")
-				continue
-
-#   If the guess is less than the solution, display to the player "It's higher".
-			elif guess < answer:
-				print("It's low.")
-				continue
 
 start_game()
